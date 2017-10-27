@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Courses</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <h2>Are you sure you want to delete the following course?</h2>
+    
+    <p>Name:&nbsp;&nbsp;{{course_id.course_name}}</p>
+    <p>Description:&nbsp;&nbsp;{{course_id.desc}}</p>
+  
+    <form action="/{{course_id.id}}/delete" method="POST">
+        {%csrf_token%}
+        <button name="no" value="no">No</button>
+        <button name="yes" value="yes">Yes! I want to delete this</button>
+    </form>
+</body>
+</html>
